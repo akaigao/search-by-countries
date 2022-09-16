@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: "Roboto", sans-serif;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-content {
+  justify-content: center;
+}
+
+.align-items {
+  align-items: center;
+}
+
+body {
+  --primary-color: #fff;
+  --color-main-button: rgb(243, 83, 15);
+
+  background-color: rgb(241, 241, 241);
+
+  min-height: 100vh;
+  padding: 100px;
+}
+
+button {
+  all: unset;
+  background-color: var(--color-main-button);
+  color: var(--primary-color);
+  padding: 7.5px 20px;
+  border-radius: 40px;
+  transition: 0.1s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(254, 119, 61);
+  transition: 0.1s;
+}
+
+header {
+  margin-bottom: 50px;
+  max-width: 100%;
+}
+
+.input__container {
+  position: relative;
+  flex-direction: row;
+  gap: 20px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.input__box {
+  position: relative;
+  width: 500px;
+}
+
+.input__box input {
+  all: unset;
+
+  background-color: var(--primary-color);
+  border: 1px solid rgb(195, 195, 195);
+  font-size: 12px;
+
+  padding: 10px 10px 10px 40px;
+  width: 100%;
+  height: 100%;
+
+  border-radius: 30px;
+}
+
+.input__box img {
+  position: absolute;
+  left: 15px;
+}
+
+.input__button {
+  text-transform: uppercase;
+  height: 30px;
+  padding: 3px 20px;
+}
+
+.countrys {
+  flex-wrap: wrap;
+  gap: 100px;
+}
+
+.country__container {
+  max-width: 400px;
+
+  position: relative;
+  flex-direction: column;
+
+  border-radius: 20px;
+}
+
+.flag__container {
+  position: relative;
+}
+
+.flag__container h1 {
+  background-color: rgba(44, 44, 44, 0.6);
+  color: var(--primary-color);
+  border: 4px solid var(--primary-color);
+
+  position: absolute;
+  top: 30%;
+  padding: 5px 10px;
+
+  font-size: 34px;
+  text-align: center;
+}
+
+.flag {
+  width: 400px;
+  height: 300px;
+}
+
+.info__container {
+  background-color: var(--primary-color);
+  box-shadow: 0px 5px 30px 0px rgba(130, 148, 173, 0.6);
+
+  position: absolute;
+  top: 80%;
+
+  width: 97%;
+  height: 100px;
+  padding: 10px 20px;
+  border-radius: 10px;
+
+  justify-content: space-between;
+  text-align: center;
+}
+
+.info__box span {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.info__box p {
+  font-size: 10px;
+  font-weight: 100;
+}
+
+.hidden {
+  display: none;
+}
+
+.backToTop {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 1;
+
+  opacity: 20%;
+  transition: 0.1s;
+}
+
+.backToTop:hover {
+  opacity: 100%;
+  transition: 0.1s;
+}
+
+.buttonCard {
+  position: absolute;
+  top: 107%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.buttonCard a {
+  text-decoration: none;
+  color: var(--primary-color);
+}
+
+.min-resolution {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  body {
+    padding: 100px 50px;
+  }
+
+  .input__container {
+    position: relative;
+    flex-direction: column;
+    gap: 20px;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  .input__box {
+    position: relative;
+    max-width: 100%;
+  }
+
+  .input__box input {
+    all: unset;
+
+    background-color: var(--primary-color);
+    border: 1px solid rgb(195, 195, 195);
+    font-size: 12px;
+
+    padding: 10px 10px 10px 40px;
+    width: 100%;
+    height: 100%;
+
+    border-radius: 30px;
+  }
+
+  .country__container {
+    max-width: 100%;
+
+    position: relative;
+    flex-direction: column;
+
+    border-radius: 20px;
+  }
+}
+
+@media (max-width: 410px) {
+  .flag {
+    width: 300px;
+    height: 200px;
+  }
+
+  .info__container {
+    top: 65%;
+    flex-direction: column;
+    text-align: left;
+  }
+
+  .info__box {
+    min-width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .buttonCard {
+    position: absolute;
+    top: 112%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 299px) {
+  .countrys,
+  .input__container {
+    display: none;
+  }
+
+  .min-resolution {
+    text-align: center;
+    display: block;
+  }
+}
