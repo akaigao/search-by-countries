@@ -22,12 +22,15 @@
 
 body {
   --primary-color: #fff;
+  --secondary-color: #000;
+  --background-color: rgb(241, 241, 241);
   --color-main-button: rgb(243, 83, 15);
+  --box-shadow: 0px 5px 30px 0px rgba(130, 148, 173, 0.6);
 
-  background-color: rgb(241, 241, 241);
+  background-color: var(--background-color);
 
   min-height: 100vh;
-  padding: 100px;
+  padding: 50px 100px 100px 100px;
 }
 
 button {
@@ -48,6 +51,74 @@ button:hover {
 header {
   margin-bottom: 50px;
   max-width: 100%;
+  min-height: 300px;
+  position: relative;
+}
+
+.switch--site__container {
+  gap: 5px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.switch__site--mode {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch__site--mode input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.switch__site--mode input:checked + .slider {
+  background-color: #2196f3;
+}
+
+.switch__site--mode input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+.switch__site--mode input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
 }
 
 .input__container {
@@ -89,7 +160,7 @@ header {
   padding: 3px 20px;
 }
 
-.countrys {
+.countries {
   flex-wrap: wrap;
   gap: 100px;
 }
@@ -127,7 +198,7 @@ header {
 
 .info__container {
   background-color: var(--primary-color);
-  box-shadow: 0px 5px 30px 0px rgba(130, 148, 173, 0.6);
+  box-shadow: var(--box-shadow);
 
   position: absolute;
   top: 80%;
@@ -139,6 +210,14 @@ header {
 
   justify-content: space-between;
   text-align: center;
+}
+
+.branco {
+  color: #fff;
+}
+
+.info__box {
+  color: var(--secondary-color);
 }
 
 .info__box span {
@@ -263,7 +342,7 @@ header {
 }
 
 @media (max-width: 299px) {
-  .countrys,
+  .countries,
   .input__container {
     display: none;
   }

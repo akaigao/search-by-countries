@@ -1,7 +1,9 @@
-const countrys = document.querySelector(".countrys"),
+const countries = document.querySelector(".countries"),
+  body = document.querySelector("body"),
   search = document.querySelector(".input__container input"),
   buttonBackToTop = document.querySelector(".backToTop"),
-  buttonShowAll = document.querySelector(".input__button");
+  buttonShowAll = document.querySelector(".input__button"),
+  switchButton = document.querySelector(".switch__site--mode input");
 
 const translate = (string, from, to) => {
   return new Promise((resolve) => {
@@ -92,7 +94,7 @@ const createCards = (element) => {
   button.append(iconMap, titleButton);
 
   countryContainer.append(flagContainer, infoContainer, button);
-  countrys.append(countryContainer);
+  countries.append(countryContainer);
 };
 
 fetch("https://restcountries.com/v2/all").then((response) => {
@@ -112,8 +114,8 @@ search.addEventListener("keydown", async (event) => {
 
   researchedCountry = await translate(researchedCountry, "pt-br", "en");
 
-  const allCountrys = countrys.querySelectorAll(".country__container");
-  allCountrys.forEach((element) => {
+  const allCountries = countries.querySelectorAll(".country__container");
+  allCountries.forEach((element) => {
     const nameCountry = element.children[0].firstChild.textContent;
 
     if (nameCountry != researchedCountry) {
@@ -129,9 +131,48 @@ buttonBackToTop.addEventListener("click", () => {
 });
 
 buttonShowAll.addEventListener("click", () => {
-  const allCountrys = countrys.querySelectorAll(".country__container");
-  allCountrys.forEach((element) => {
+  const allCountries = countries.querySelectorAll(".country__container");
+  allCountries.forEach((element) => {
     element.classList.remove("hidden");
     search.value = "";
   });
+});
+
+switchButton.addEventListener("click", (event) => {
+  const checked = event.target.checked;
+  if (checked) {
+    body.style.setProperty("--background-color", "rgb(34, 34, 40)");
+    const allCountries = countries.querySelectorAll(".country__container");
+    allCountries.forEach((element) => {
+      const infoContainer = element.children[1];
+      const infoBox = infoContainer.children;
+
+      for (let box of infoBox) {
+        box.style.setProperty("--secondary-color", "#fff");
+      }
+
+      infoContainer.style.setProperty("--primary-color", "rgb(34, 34, 40)");
+      infoContainer.style.setProperty(
+        "--box-shadow",
+        "0px 5px 5px 0px rgba(24, 27, 31, 0.6)"
+      );
+    });
+  } else {
+    body.style.setProperty("--background-color", "rgb(241, 241, 241)");
+    const allCountries = countries.querySelectorAll(".country__container");
+    allCountries.forEach((element) => {
+      const infoContainer = element.children[1];
+      const infoBox = infoContainer.children;
+
+      for (let box of infoBox) {
+        box.style.setProperty("--secondary-color", "#000");
+      }
+
+      infoContainer.style.setProperty("--primary-color", "#fff");
+      infoContainer.style.setProperty(
+        "--box-shadow",
+        "0px 5px 30px 0px rgba(130, 148, 173, 0.6)"
+      );
+    });
+  }
 });
