@@ -5,6 +5,8 @@ const countries = document.querySelector(".countries"),
   buttonShowAll = document.querySelector(".input__button"),
   switchButton = document.querySelector(".switch__site--mode input");
 
+let initialTheme = localStorage.getItem("theme");
+
 const translate = (string, from, to) => {
   return new Promise((resolve) => {
     fetch(
@@ -140,6 +142,10 @@ buttonShowAll.addEventListener("click", () => {
 
 switchButton.addEventListener("click", (event) => {
   const checked = event.target.checked;
+  localStorage.setItem("theme", initialTheme === "light" ? "dark" : "light");
+  initialTheme = localStorage.getItem("theme");
+  localStorage.theme = initialTheme;
+
   if (checked) {
     body.style.setProperty("--background-color", "rgb(34, 34, 40)");
     const allCountries = countries.querySelectorAll(".country__container");
