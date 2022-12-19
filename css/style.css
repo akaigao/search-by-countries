@@ -120,43 +120,49 @@ header {
   border-radius: 50%;
 }
 
-.input__container {
-  position: relative;
-  flex-direction: row;
-  gap: 20px;
-
-  width: 100%;
-  height: 100%;
-}
-
-.input__box {
-  position: relative;
+.select__box,
+select {
   width: 500px;
 }
 
-.input__box input {
+select {
   all: unset;
 
   background-color: var(--primary-color);
   border: 1px solid rgb(195, 195, 195);
   font-size: 12px;
 
-  padding: 10px 10px 10px 40px;
+  padding: 10px 10px 10px 20px;
   width: 100%;
   height: 100%;
 
   border-radius: 30px;
+  cursor: pointer;
 }
 
-.input__box img {
+.select__box {
+  position: relative;
+}
+
+.select__box::before,
+.select__box::after {
+  content: "";
   position: absolute;
-  left: 15px;
+  top: 50%;
+  border-top: 2px solid rgb(201, 201, 201);
+  width: 10px;
 }
 
-.input__button {
-  text-transform: uppercase;
-  height: 30px;
-  padding: 3px 20px;
+.select__box::before {
+  right: 26px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.select__box::after {
+  right: 20px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
 }
 
 .countries {
@@ -281,23 +287,9 @@ header {
     height: 100%;
   }
 
-  .input__box {
-    position: relative;
+  .select__box,
+  select {
     max-width: 100%;
-  }
-
-  .input__box input {
-    all: unset;
-
-    background-color: var(--primary-color);
-    border: 1px solid rgb(195, 195, 195);
-    font-size: 12px;
-
-    padding: 10px 10px 10px 40px;
-    width: 100%;
-    height: 100%;
-
-    border-radius: 30px;
   }
 
   .country__container {

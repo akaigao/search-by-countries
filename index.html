@@ -5,18 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Consulta de Países</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link id="dark-mode" rel="stylesheet" />
+    <link rel="stylesheet" id="darkMode" />
     <script type="module" src="script.js" defer></script>
   </head>
 
   <body>
     <header class="header flex align-items justify-content">
       <section class="input__container flex align-items justify-content">
-        <div class="input__box flex align-items">
-          <img src="assets/search-icon.svg" width="18" alt="" />
-          <input type="search" />
+        <div class="select__box flex align-items">
+          <select name="select">
+            <option value="all">TODOS</option>
+          </select>
         </div>
-        <button class="input__button">Todos</button>
       </section>
       <div class="switch--site__container flex align-items justify-content">
         <span>🌞</span>
@@ -29,7 +29,7 @@
     </header>
     <section class="countries flex justify-content">
       <div class="backToTop">
-        <img src="assets/uparrow.svg" width="60" alt="icon interrogação" />
+        <img src="assets/uparrow.svg" width="60" alt="icon uparrow" />
       </div>
     </section>
     <section class="min-resolution">
