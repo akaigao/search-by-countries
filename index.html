@@ -10,28 +10,41 @@
   </head>
 
   <body>
-    <header class="header flex align-items justify-content">
-      <section class="input__container flex align-items justify-content">
+    <header class="header flex flex-start space-between">
+      <div class="networks flex align-items justify-content">
+        <a href="https://github.com/akaigao" target="_blank">
+          <img src="assets/github.svg" alt="Meu Github" />
+        </a>
+        <a href="https://www.linkedin.com/in/akaigao/" target="_blank">
+          <img src="assets/linkedin.svg" alt="Meu LinkedIn" />
+        </a>
+      </div>
+      <div class="switch__container">
+        <div class="switch--site__container flex align-items justify-content">
+          <span>🌞</span>
+          <label class="switch__site--mode">
+            <input type="checkbox" />
+            <span class="slider round"></span>
+          </label>
+          <span>🌚</span>
+        </div>
+      </div>
+    </header>
+    <main>
+      <div class="input__container flex align-items justify-content">
         <div class="select__box flex align-items">
           <select name="select">
             <option value="all">TODOS</option>
           </select>
         </div>
+      </div>
+
+      <section class="countries flex justify-content">
+        <div class="backToTop">
+          <img src="assets/uparrow.svg" width="60" alt="icon uparrow" />
+        </div>
       </section>
-      <div class="switch--site__container flex align-items justify-content">
-        <span>🌞</span>
-        <label class="switch__site--mode">
-          <input type="checkbox" />
-          <span class="slider round"></span>
-        </label>
-        <span>🌚</span>
-      </div>
-    </header>
-    <section class="countries flex justify-content">
-      <div class="backToTop">
-        <img src="assets/uparrow.svg" width="60" alt="icon uparrow" />
-      </div>
-    </section>
+    </main>
     <section class="min-resolution">
       <h1>Visite a versão web!</h1>
     </section>

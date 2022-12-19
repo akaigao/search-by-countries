@@ -16,8 +16,16 @@
   justify-content: center;
 }
 
+.space-between {
+  justify-content: space-between;
+}
+
 .align-items {
   align-items: center;
+}
+
+.flex-start {
+  align-items: flex-start;
 }
 
 body {
@@ -31,6 +39,17 @@ body {
 
   min-height: 100vh;
   padding: 50px 100px 100px 100px;
+}
+
+header {
+  background-color: var(--background-color);
+  max-width: 100%;
+  padding: 30px;
+  margin-bottom: 40px;
+
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 button {
@@ -48,9 +67,7 @@ button:hover {
   transition: 0.1s;
 }
 
-header {
-  max-width: 100%;
-  min-height: 300px;
+.switch__container {
   position: relative;
 }
 
@@ -142,6 +159,7 @@ select {
 
 .select__box {
   position: relative;
+  margin-bottom: 50px;
 }
 
 .select__box::before,
@@ -172,7 +190,6 @@ select {
 
 .country__container {
   max-width: 400px;
-
   position: relative;
   flex-direction: column;
 
