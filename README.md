@@ -1,9 +1,17 @@
 ## Buscador de países
 
-O objetivo foi consumir a [API](https://restcountries.com/) para informações como: - Nome - Região - Capital - População - Bandeira
+Fiz deploy da aplicação e pode ser verificada através desse [link](https://all-countries-nine.vercel.app/), que está hospeadado na Vercel.
 
-Como a API retorna o nome do país em inglês, usei desta [API](https://mymemory.translated.net/doc/spec.php) para conseguir traduzir o valor do input (digitado no search), para que a pesquisa possa ser feita em português-br.
+Tudo foi feito de forma "pura", foi um dos meus primeiros projetos de quando iniciel meus estudos:
 
-Ao invés de traduzir somente o value do input poderia ser traduzido o nome do país de forma direta, entretando, esta API tem um limite de requisições diárias gratuita, o que impossibilitaria a execução do projeto.
+- Javascript
+- HTML5
+- CSS3
 
-###### tags: `api rest` `front-end` `backend` `HTML` `DOM` `css`
+---
+
+O objetivo era consumir a [API](https://restcountries.com/) para pegar as informações como: Nome, Região, Capital, População e Bandeira.
+
+---
+
+Obrigado e espero que gostem!
